@@ -167,3 +167,140 @@ void p(int x) {
 		cout << x % 10 << endl;
 	}
 }	
+
+
+//03 decembrie 2022
+
+//todo functie ce determina cate cifre are un numar
+
+int nrCifre(int n) {
+	if (n == 0) {
+		return 0;
+	}
+	return 1 + nrCifre(n / 10);
+}
+
+//todo functie ce determina cate cifre pare are un numar
+
+int nrCifrePare(int n) {
+	if (n == 0) {
+		return 0;
+	}
+	if (n % 2 == 0) {
+		return 1 + nrCifrePare(n / 10);
+	}
+	return nrCifrePare(n / 10);
+}
+
+//todo functie ce determina cate cifre impare are un numar
+
+int nrCifreImpare(int n) {
+	if (n == 0) {
+		return 0;
+	}
+	if (n % 2 == 1) {
+		return 1 + nrCifreImpare(n / 10);
+	}
+	return nrCifreImpare(n / 10);
+}
+
+//todo functie ce verifica daca un numar contine cifra x
+
+bool contineCifra(int n, int x) {
+	if (n == 0) {
+		return 0;
+	}
+	if (n % 10 == x) {
+		return 1;
+	}
+	return contineCifra(n / 10, x);
+}
+
+//todo functie ce verifica daca toate cifrele lui n sunt identice
+
+bool cifreIdentice(int n, int cifra) {
+	if (n == 0) {
+		return true;
+	}
+	if (n % 10 != cifra) {
+		return false;
+	}
+	cifreIdentice(n / 10, cifra);
+}
+
+//todo functie ce returneaza cea mai mica cifra a numarului
+
+int cifraMinima(int n, int& min) {
+	if (n == 0) {
+		return min;
+	}
+	if (n % 10 < min) {
+		min = n % 10;
+	}
+	cifraMinima(n/10, min);
+}
+
+//todo functie ce returneaza cifra maxima a lui n
+
+int cifraMaxima(int n, int& max) {
+	if (n == 0) {
+		return max;
+	}
+	if (n % 10 > max) {
+		max = n % 10;
+	}
+	cifraMaxima(n / 10, max);
+}
+
+//todo functie ce returneaza cifra minima para a lui n
+
+int cifraMinimaPara(int n, int& min) {
+	if (n == 0) {
+		return min;
+	}
+	if (n % 10 < min && (n % 10) % 2 == 0) {
+		min = n % 10;
+	}
+	cifraMinimaPara(n / 10, min);
+}
+
+//todo functie ce returneaza cifra maxima para a lui n
+
+int cifraMaximaPara(int n, int& max) {
+	if (n == 0) {
+		return max;
+	}
+	if (n % 10 > max && (n % 10) % 2 == 0) {
+		max = n % 10;
+	}
+	cifraMaximaPara(n / 10, max);
+}
+
+//todo functie ce afiseaza sufixele unui numar
+
+void sufixe(int n, int& suf, int& p) {
+	if (n != 0) {
+		suf = suf + (n % 10) * p;
+		p *= 10;
+		cout << suf << ' ';
+		sufixe(n / 10, suf, p);
+	}
+}
+
+//todo functie ce returneaza oglinditul unui numar
+
+int oglindit(int n,int nou) {
+	if (n == 0) {
+		return nou;
+	}
+	return  oglindit(n / 10, nou * 10 + n % 10);
+}
+
+//todo functie ce afiseaza prefixele unui numar
+
+void prefixe(int n, int p) {
+	for (int i = 0; i < nrCifre(n); i++) {
+		cout << n % p;
+		prefixe(n, p / 10);
+	}
+}

@@ -1,4 +1,5 @@
 #include "functiiRecursive.h"
+#include "solutii.h"
 
 int main()
 {
@@ -25,6 +26,16 @@ int main()
 
 
 
+    //03 decembrie 2022
+
+    //sol1();
+    //sol2();
+    //sol3();
+    //sol4();
+    //sol5();
+    //sol6();
+    cout << oglindit(12345,0);
+     prefixe(32342, 100000);
 
 
 
