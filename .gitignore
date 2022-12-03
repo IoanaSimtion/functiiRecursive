@@ -23,3 +23,6 @@
 *.pdb
 *.exe
 *.pdb
+*.vsidx
+*.vsidx
+*.lock

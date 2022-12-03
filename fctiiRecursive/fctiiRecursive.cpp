@@ -11,6 +11,26 @@ int main()
 
 
 
+    //TEMA 03 decembrie 2022
+
+    //f21('C');
+    //cout << suma(5, 4);
+    //cout << f23(17);
+    //cout << f23(22);
+    //cout << f24(95);
+    //afis(8);
+    //scrie(1, 7);
+    //cout << f27(8, 4);
+    //p(123);
+
+
+
+
+
+
+
+
+
 
 }
 
