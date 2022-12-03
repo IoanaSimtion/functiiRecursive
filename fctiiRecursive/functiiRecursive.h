@@ -156,7 +156,7 @@ int f27(int x, int y) {
 	if (y < x) {
 		return 1 + f27(x, y + 1);
 	}
-	return 1;
+	return 1;		
 }
 
 
@@ -166,4 +166,4 @@ void p(int x) {
 		p(x / 10);
 		cout << x % 10 << endl;
 	}
-}
+}	
