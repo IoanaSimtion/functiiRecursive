@@ -76,3 +76,77 @@ void sol7() {
 	cout << "Prefixele numarului " << n << " sunt: " << endl;
 
 }
+
+
+//8. sa se afiseze cifra de rang k
+
+void sol8() {
+	int n = 18796, k = 2, ct = 0;
+	cout << cifraRangK(n, k, ct);
+}
+
+
+//9. sa se elimine cifra de rang k
+
+void sol9() {
+	int n = 148659, k = 2, m = 0, ct = 0, p=1;
+	cout << nrNouEliminareK(n, k, m, ct, p);
+}
+
+
+//10. sa se elimine prima si ultima cifra a numarului
+
+void sol10() {
+	int n = 123456, m=0, p=1;
+	cout << elimPrimaUltimaC(n, m, p);
+}
+
+
+//11. sa se verifice daca n este palindrom
+
+void sol11() {
+	int n = 123321, m = 0;
+	if (n == oglindit(n, m)) {
+		cout << n << " este palindrom " << endl;
+	}
+	else {
+		cout << n << " nu este palindrom " << endl;
+	}
+}
+
+
+//12. sa se verifice daca n are aspect fierastrau (nr impar de cifre si cifrele sunt aranjate babab)
+
+void sol12() {
+	int n = 474747474;
+	if (nrCifre(n) % 2 == 1 && babab(n) == 1) {
+		cout << n << " are aspect fierastrau" << endl;
+	}
+	else {
+		cout << n << " nu are aspect fierastrau" << endl;
+	}
+}
+
+
+//13. sa se verifice daca cifrele lui n sunt in ordine crescatoare
+
+void sol13() {
+	int n = 2458;
+	cout << cifreCresc(n);
+}
+
+
+//14. sa se verifice daca cifrele lui n sunt in ordine descrescatoare
+
+void sol14() {
+	int n = 8653;
+	cout << cifreDescresc(n);
+}
+
+
+//15. sa se verifice daca cifrele lui n oscileaza 
+
+void sol15() {
+	int n = 3527361;
+	cout << oscileaza(n);
+}

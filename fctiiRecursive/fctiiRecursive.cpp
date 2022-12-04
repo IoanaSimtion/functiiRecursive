@@ -34,13 +34,20 @@ int main()
     //sol4();
     //sol5();
     //sol6();
-    cout << oglindit(12345,0);
-     prefixe(32342, 100000);
+    //cout << oglindit(12345,0);
+    //prefixe(32342, 100000);
+    
 
 
 
-
-
+    //sol8();
+    //sol9();
+    //sol10();
+    //sol11();
+    //sol12();
+    //sol13();
+    //sol14();
+    sol15();
 
 
 }

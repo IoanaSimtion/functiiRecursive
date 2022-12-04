@@ -304,3 +304,97 @@ void prefixe(int n, int p) {
 		prefixe(n, p / 10);
 	}
 }
+
+//todo functie ce afiseaza cifra de rang k
+
+int cifraRangK(int n, int k, int ct) {
+	if (ct == k) {
+		return n % 10;
+	}
+	cifraRangK(n/10, k, ct + 1);
+}
+
+//todo functie ce elimina cifra de rang k
+
+int nrNouEliminareK(int n, int k, int m, int ct, int p) {
+	if (n == 0) {
+		return m;
+	}
+	if (ct == k) {
+		n /= 10;
+	}
+	m = m + (n % 10) * p;
+	nrNouEliminareK(n / 10, k, m, ct + 1, p * 10);
+}
+
+//todo functie ce elimina prima si ultima cifra a unui numar
+
+int elimPrimaUltimaC(int n, int m, int p) {
+	if (p == 1) {
+		n /= 10;
+	}
+	if (n <= 9) {
+		return m;
+	}
+	m = m + (n % 10) * p;
+	elimPrimaUltimaC(n / 10, m, p * 10);
+}
+
+
+//todo functie ce verifica daca numarul are aspect babab
+
+bool babab(int n) {
+	if (nrCifre(n) == 2) {
+		return true;
+	}
+	if (n % 10 != (n / 100) % 10) {
+		return false;
+	}
+	babab(n / 10);
+}
+
+//todo functie ce verifica daca cifrele lui n sunt in ordine crescatoare
+
+bool cifreCresc(int n) {
+	if (n < 10) {
+		return true;
+	}
+	if (n % 10 < (n / 10) % 10) {
+		return false;
+	}
+	cifreCresc(n / 10);
+}
+
+//todo functie ce verifica daca cifrele lui n sunt in ordine descrescatoare
+
+bool cifreDescresc(int n) {
+	if (n < 10) {
+		return true;
+	}
+	if (n % 10 > (n / 10) % 10) {
+		return false;
+	}
+	cifreDescresc(n / 10);
+}
+
+//todo functie ce verifica daca cifrele lui n oscileaza
+
+bool oscileaza(int n) {
+	if (n == 0) {
+		return true;
+	}
+	if (n % 10 == (n / 10) % 10) {
+		return false;
+	}
+	if (n % 10 < (n / 10) % 10) {
+		if ((n / 10) % 10 < (n / 100) % 10) {
+			return false;
+		}
+	}
+	if (n % 10 > (n / 10) % 10) {
+		if ((n / 10) % 10 > (n / 100) % 10) {
+			return false;
+		}
+	}
+	oscileaza(n / 10);
+}
