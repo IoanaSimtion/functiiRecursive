@@ -36,7 +36,7 @@ int main()
     //sol6();
     //cout << oglindit(12345,0);
     //prefixe(32342, 100000);
-    
+    //sol7();
 
 
 
@@ -47,7 +47,7 @@ int main()
     //sol12();
     //sol13();
     //sol14();
-    sol15();
+    //sol15();
 
 
 }

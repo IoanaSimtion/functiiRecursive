@@ -298,10 +298,11 @@ int oglindit(int n,int nou) {
 
 //todo functie ce afiseaza prefixele unui numar
 
-void prefixe(int n, int p) {
-	for (int i = 0; i < nrCifre(n); i++) {
-		cout << n % p;
-		prefixe(n, p / 10);
+void prefixe(int n, int pref) {
+	if (n != 0) {
+		pref = pref * 10 + (n % 10);
+		cout << pref << ' ';
+		prefixe(n / 10, pref);
 	}
 }
 

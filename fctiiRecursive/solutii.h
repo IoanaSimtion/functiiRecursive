@@ -72,9 +72,9 @@ void sol6() {
 //7. sa se afiseze prefixele lui n
 
 void sol7() {
-	int n = 8659, pref = 0, p = 1;
+	int n = 8659, pref = 0, m = 0;
 	cout << "Prefixele numarului " << n << " sunt: " << endl;
-
+	prefixe(oglindit(n,m), pref);
 }
 
 
