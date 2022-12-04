@@ -150,3 +150,54 @@ void sol15() {
 	int n = 3527361;
 	cout << oscileaza(n);
 }
+
+
+//16. sa se afiseze cifra de contron a unui numar
+
+void sol16() {
+	int n = 1971, c=10, suma = 0;
+	cout << cifraControl(n, c);
+	//cout << sumaCifre(n, suma);
+}
+
+
+//17. sa se verifice daca a se regaseste in b
+
+void sol17() {
+	int a = 58, b = 194583;
+	cout << seRegaseste(a, b);
+}
+
+
+//18. sa se permute cu o pozitie la stanga cifrele numarului n
+
+void sol18() {
+	int n = 54187, perm=0, p=1;
+	cout << permutareSt(n, perm,p);
+}
+
+
+//19. sa se permute cu o pozitie la dreapta cifrele numarului n
+
+void sol19() {
+	int n = 54187, perm = 0, p = 1, uc = n % 10;
+	cout << permutareDr(n/10, perm, p, uc);
+}
+
+
+//20. sa se determine de cate ori s-a citit cifra data
+
+void sol20() {
+	int n, c = 2, ct=0, ctC=0;
+	//cout << ctApCifr(n, c, ct);
+	cout << apCifra(n, c, ctC,ct);
+}
+
+
+//21. sa se insumeze prima cifra a fiecarui nr citit
+
+void sol21() {
+	int n, suma = 0;
+	//cout << primaCifra(n);
+	cout << sumaPrimeleCifre(n, suma);
+}

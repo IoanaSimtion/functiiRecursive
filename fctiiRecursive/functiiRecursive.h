@@ -1,5 +1,6 @@
 using namespace std;
 #include <iostream>
+#include <math.h>
 #pragma once
 
 int f(int a, int b) {
@@ -398,4 +399,113 @@ bool oscileaza(int n) {
 		}
 	}
 	oscileaza(n / 10);
+}
+
+//todo functie ce returneaza suma cifrelor unui numar
+
+int sumaCifre(int n, int suma) {
+	if (n == 0) {
+		return suma;
+	}
+	suma += n % 10;
+	sumaCifre(n/10, suma);
+}
+
+//todo functie ce returneaza cifra de control a unui numar
+
+int cifraControl(int n, int cifrC) {
+	if (cifrC < 10) {
+		return cifrC;
+	}
+	cifrC = 0;
+	cifrC = sumaCifre(n, cifrC);
+	n = cifrC;
+	cifraControl(n, cifrC);
+}
+
+//todo functie ce verifica daca a se regaseste in b
+
+bool seRegaseste(int a, int b) {
+	int p = pow(10, nrCifre(a));
+	if (b == 0) {
+		return false;
+	}
+	if (a == b % p) {
+		return true;
+	}
+	seRegaseste(a, b/10);
+}
+
+//todo functie ce permuta cifrele unui nr cu o poz la stanga
+
+int permutareSt(int n, int perm, int p) {
+	if (n == 0) {
+		return perm;
+	}
+	if (n < 10) {
+		perm = perm * 10 + n % 10;
+	}
+	else {
+		perm = perm + (n % 10) * p;
+	}
+	permutareSt(n / 10, perm, p*10);
+}
+
+//todo functie ce permuta cifrele unui nr cu o poz la dreapta
+
+int permutareDr(int n, int perm, int p, int uc) {
+	if (n == 0) {
+		return perm;
+	}
+	if (n < 10) {
+		perm = perm + uc * p * 10 + (n % 10) * p;
+	}
+	else {
+		perm = perm + (n % 10) * p;
+	}
+	permutareDr(n/10, perm, p * 10, uc);
+}
+
+//todo functie ce determina de cate ori apare o cifra intr-un nr
+
+int ctAparitieCifra(int n, int c, int contor) {
+	if (n == 0) {
+		return contor;
+	}
+	if (n % 10 == c) {
+		contor++;
+	}
+	ctAparitieCifra(n/10, c, contor);
+}
+
+//todo functie ce determina de cate ori apare c in numerele citite
+
+int apCifra(int& n, int c, int contorCifra, int contor) {
+	cin >> n;
+	if (n == 0) {
+		return contorCifra;
+	}
+	contor = 0;
+	contorCifra = contorCifra + ctAparitieCifra(n, c, contor);
+	apCifra(n, c, contorCifra,contor);
+}
+
+//todo functie ce returneaza prima cifra a unui nr
+
+int primaCifra(int n) {
+	if (n < 10) {
+		return n;
+	}
+	primaCifra(n / 10);
+}
+
+//todo functie ce returneaza suma primelor cifre ale nr citite
+
+int sumaPrimeleCifre(int& n, int suma) {
+	cin >> n;
+	if (n == 0) {
+		return suma;
+	}
+	suma += primaCifra(n);
+	sumaPrimeleCifre(n, suma);
 }
